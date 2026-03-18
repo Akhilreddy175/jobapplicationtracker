@@ -15,7 +15,11 @@ public class Application {
 
     private String role;
 
-    private LocalDate dateApplied;
+    private LocalDate appliedDate;
+    
+    private LocalDate followupDate;
+    
+    private String url;
 
     private String status;
 
@@ -43,15 +47,31 @@ public class Application {
         this.role = role;
     }
 
-    public LocalDate getDateApplied() {
-        return dateApplied;
-    }
+    public LocalDate getAppliedDate() {
+		return appliedDate;
+	}
 
-    public void setDateApplied(LocalDate dateApplied) {
-        this.dateApplied = dateApplied;
-    }
+	public void setAppliedDate(LocalDate appliedDate) {
+		this.appliedDate = appliedDate;
+	}
 
-    public String getStatus() {
+	public LocalDate getFollowupDate() {
+		return followupDate;
+	}
+
+	public void setFollowupDate(LocalDate followupDate) {
+		this.followupDate = followupDate;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getStatus() {
         return status;
     }
 

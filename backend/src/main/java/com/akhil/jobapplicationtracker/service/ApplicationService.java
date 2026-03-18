@@ -34,7 +34,7 @@ public class ApplicationService {
         if (existing != null) {
             existing.setCompany(updatedApp.getCompany());
             existing.setRole(updatedApp.getRole());
-            existing.setDateApplied(updatedApp.getDateApplied());
+            existing.setAppliedDate(updatedApp.getAppliedDate());
             existing.setStatus(updatedApp.getStatus());
             existing.setNotes(updatedApp.getNotes());
 
