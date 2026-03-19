@@ -3,7 +3,11 @@ package com.akhil.jobapplicationtracker.controller;
 import java.util.Map;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.akhil.jobapplicationtracker.model.User;
 import com.akhil.jobapplicationtracker.repository.UserRepository;
@@ -38,6 +42,6 @@ public class AuthController {
         }
 
         String token = JwtUtil.generateToken(user.getEmail());
-        return Map.of("token", token);
+        return Map.of("token", token, "name", existingUser.getName());
     }
 }

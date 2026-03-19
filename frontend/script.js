@@ -66,6 +66,7 @@ const auth = {
             btn.textContent = 'Signing in...'; btn.disabled = true;
             const res = await api.request('/auth/login', 'POST', { email, password });
             localStorage.setItem('jwt', res.token);
+            localStorage.setItem('userName', res.name);
             app.showToast('Login successful!');
             document.getElementById('form-login').reset();
             app.navigate('dashboard'); dashboard.init();
@@ -99,6 +100,7 @@ const auth = {
 
     logout() {
         localStorage.removeItem('jwt');
+        localStorage.removeItem('userName');
         app.navigate('login');
         app.showToast('Logged out successfully');
     }
@@ -106,7 +108,8 @@ const auth = {
 
 const dashboard = {
     async init() {
-        document.getElementById('user-greeting').textContent = "Welcome!";
+        const name = localStorage.getItem('userName');
+        document.getElementById('user-greeting').textContent = name ? `Welcome, ${name}!` : 'Welcome!';
         await this.fetchApplications();
     },
 
