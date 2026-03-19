@@ -24,8 +24,18 @@ public class Application {
     private String status;
 
     private String notes;
+    
+    private String userEmail;
 
-    public Application() {}
+    public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public Application() {}
 
     public Long getId() {
         return id;

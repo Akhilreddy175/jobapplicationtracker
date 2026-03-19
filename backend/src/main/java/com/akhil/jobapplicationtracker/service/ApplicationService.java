@@ -12,49 +12,44 @@ public class ApplicationService {
     @Autowired
     private ApplicationRepository repository;
 
-    
-    public Application saveApplication(Application app) {
+    public Application saveApplication(Application app, String userEmail) {
+        app.setUserEmail(userEmail);
         return repository.save(app);
     }
 
-    
-    public List<Application> getAllApplications() {
-        return repository.findAll();
+    public List<Application> getAllApplications(String userEmail) {
+        return repository.findByUserEmail(userEmail);
     }
 
-    
-    public Application getApplicationById(Long id) {
-        return repository.findById(id).orElse(null);
+    public Application getApplicationById(Long id, String userEmail) {
+        return repository.findByIdAndUserEmail(id, userEmail).orElse(null);
     }
 
-    
-    public Application updateApplication(Long id, Application updatedApp) {
-        Application existing = repository.findById(id).orElse(null);
-
+    public Application updateApplication(Long id, Application updatedApp, String userEmail) {
+        Application existing = repository.findByIdAndUserEmail(id, userEmail).orElse(null);
         if (existing != null) {
             existing.setCompany(updatedApp.getCompany());
             existing.setRole(updatedApp.getRole());
             existing.setAppliedDate(updatedApp.getAppliedDate());
             existing.setStatus(updatedApp.getStatus());
             existing.setNotes(updatedApp.getNotes());
-
+            existing.setUrl(updatedApp.getUrl());
+            existing.setFollowupDate(updatedApp.getFollowupDate());
             return repository.save(existing);
         }
         return null;
     }
 
-    
-    public void deleteApplication(Long id) {
-        repository.deleteById(id);
+    public void deleteApplication(Long id, String userEmail) {
+        repository.findByIdAndUserEmail(id, userEmail)
+                  .ifPresent(app -> repository.deleteById(id));
     }
 
-    
-    public List<Application> getByStatus(String status) {
-        return repository.findByStatus(status);
+    public List<Application> getByStatus(String status, String userEmail) {
+        return repository.findByStatusAndUserEmail(status, userEmail);
     }
 
-    
-    public List<Application> searchByCompany(String company) {
-        return repository.findByCompanyContainingIgnoreCase(company);
+    public List<Application> searchByCompany(String company, String userEmail) {
+        return repository.findByCompanyContainingIgnoreCaseAndUserEmail(company, userEmail);
     }
 }

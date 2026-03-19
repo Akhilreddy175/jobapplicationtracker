@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Color Palette (Modern SaaS Slate & Indigo) */
     --bg-body: #f8fafc;
     --bg-surface: #ffffff;
     --text-main: #0f172a;
     --text-muted: #64748b;
     --border-color: #e2e8f0;
     
-    /* Brand Colors */
     --primary: #4f46e5;
     --primary-hover: #4338ca;
     --danger: #ef4444;
     --danger-hover: #dc2626;
     
-    /* Status Colors */
     --status-applied-bg: #e0e7ff; --status-applied-text: #3730a3;
     --status-oa-bg: #fae8ff;      --status-oa-text: #86198f;
     --status-interview-bg:#fef3c7;--status-interview-text:#b45309;
@@ -22,7 +19,6 @@
     --status-rejected-bg: #fee2e2;--status-rejected-text: #991b1b;
     --status-ghosted-bg: #f1f5f9; --status-ghosted-text: #475569;
 
-    /* Utilities */
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -31,7 +27,6 @@
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
 }
 
-/* Base Reset & Typography */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -45,20 +40,16 @@ h1, h2, h3, h4 { font-weight: 600; color: var(--text-main); letter-spacing: -0.0
 a { color: var(--primary); text-decoration: none; cursor: pointer; transition: color 0.2s; }
 a:hover { color: var(--primary-hover); }
 
-/* Views Management */
 .view { display: none; }
 .view.active { display: block; animation: fadeIn 0.3s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Layout */
 .container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; }
 .grid-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
 @media (max-width: 1024px) { .grid-layout { grid-template-columns: 1fr; } }
 
-/* Components */
 .card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); box-shadow: var(--shadow-md); padding: 1.5rem; }
 
-/* Buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem; padding: 0.625rem 1.25rem; border-radius: var(--radius-sm); font-weight: 500; font-size: 0.875rem; cursor: pointer; border: 1px solid transparent; transition: all 0.2s; box-shadow: var(--shadow-sm); }
 .btn-primary { background-color: var(--primary); color: white; }
 .btn-primary:hover { background-color: var(--primary-hover); box-shadow: var(--shadow-md); }
@@ -70,7 +61,6 @@ a:hover { color: var(--primary-hover); }
 .btn-icon:hover { background: var(--bg-body); color: var(--text-main); }
 .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-/* Forms */
 .form-group { margin-bottom: 1.25rem; }
 .form-label { display: block; margin-bottom: 0.375rem; font-weight: 500; font-size: 0.875rem; color: var(--text-main); }
 .form-control { width: 100%; padding: 0.625rem 0.875rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.875rem; font-family: inherit; transition: all 0.2s; background-color: var(--bg-surface); box-shadow: var(--shadow-sm); }
@@ -78,17 +68,14 @@ a:hover { color: var(--primary-hover); }
 .form-control::placeholder { color: #94a3b8; }
 textarea.form-control { resize: vertical; min-height: 80px; }
 
-/* Auth Pages */
 .auth-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
 .auth-card { width: 100%; max-width: 420px; padding: 2.5rem; }
 .auth-header { text-align: center; margin-bottom: 2rem; }
 .auth-header h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: var(--primary); }
 
-/* Dashboard Navbar */
 .navbar { background: var(--bg-surface); border-bottom: 1px solid var(--border-color); padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; height: 64px; position: sticky; top: 0; z-index: 10; box-shadow: var(--shadow-sm); }
 .navbar-brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
 
-/* Dashboard Summary Cards */
 .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.25rem; }
 .stat-card { padding: 1.25rem; border-top: 4px solid transparent; }
 .stat-card:nth-child(1) { border-top-color: var(--text-muted); }
@@ -99,7 +86,6 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 .stat-value { font-size: 2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem; line-height: 1; }
 .stat-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
 
-/* Table Components */
 .table-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
 .table-responsive { overflow-x: auto; margin: 0 -1.5rem -1.5rem -1.5rem; border-top: 1px solid var(--border-color); }
 .data-table { width: 100%; border-collapse: collapse; min-width: 800px; }
@@ -110,7 +96,6 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 .data-table tbody tr:last-child td { border-bottom: none; }
 .actions-cell { display: flex; gap: 0.5rem; }
 
-/* Status Badges */
 .badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: capitalize; letter-spacing: 0.025em; }
 .badge.applied { background: var(--status-applied-bg); color: var(--status-applied-text); }
 .badge.oa { background: var(--status-oa-bg); color: var(--status-oa-text); }
@@ -119,7 +104,6 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 .badge.rejected { background: var(--status-rejected-bg); color: var(--status-rejected-text); }
 .badge.ghosted { background: var(--status-ghosted-bg); color: var(--status-ghosted-text); }
 
-/* Reminders List */
 .reminder-list { display: flex; flex-direction: column; gap: 0.875rem; margin-top: 1.25rem; }
 .reminder-item { padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); border-left: 4px solid var(--primary); background: var(--bg-surface); transition: transform 0.2s, box-shadow 0.2s; }
 .reminder-item:hover { transform: translateX(2px); box-shadow: var(--shadow-sm); }
@@ -128,7 +112,6 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 .reminder-date { font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.375rem; }
 .reminder-urgent-badge { background: var(--danger); color: white; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; }
 
-/* Modals */
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px); z-index: 50; align-items: center; justify-content: center; padding: 1rem; }
 .modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
 .modal-content { background: var(--bg-surface); width: 100%; max-width: 520px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); max-height: 90vh; overflow-y: auto; }
@@ -139,7 +122,6 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 .close-btn { background: var(--bg-body); border: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; cursor: pointer; color: var(--text-muted); transition: all 0.2s; }
 .close-btn:hover { background: #e2e8f0; color: var(--text-main); }
 
-/* Toast Notifications */
 #toast-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 100; display: flex; flex-direction: column; gap: 0.75rem; }
 .toast { padding: 1rem 1.25rem; border-radius: var(--radius-sm); color: white; box-shadow: var(--shadow-lg); font-size: 0.875rem; font-weight: 500; opacity: 0; transform: translateY(100%); animation: slideUp 0.3s forwards; min-width: 280px; display: flex; align-items: center; gap: 0.5rem; }
 .toast.success { background-color: #10b981; }
@@ -148,7 +130,6 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeOut { to { opacity: 0; transform: translateY(10px); } }
 
-/* Pagination */
 .pagination-container { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-color); background: var(--bg-surface); margin: 0 -1.5rem -1.5rem -1.5rem; border-radius: 0 0 var(--radius-md) var(--radius-md); }
 .pagination-info { font-size: 0.875rem; color: var(--text-muted); }
 .pagination-controls { display: flex; gap: 0.375rem; }
