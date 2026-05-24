@@ -5,7 +5,7 @@
 
 <p align="left">The Job Application Tracker is a full-stack web application designed to help users efficiently manage and track their job applications in one place.<br><br>It enables users to add, update, filter, and monitor application progress while demonstrating real-world backend development, database management, and cloud deployment using modern DevOps practices.</p>
 <p align="center">
-  <a href="http://3.208.22.40/">
+  <a href="https://jobapplicationtracker.live">
     <img src="https://img.shields.io/badge/Live-Demo-green?style=for-the-badge" />
   </a>
 </p>
