@@ -49,7 +49,7 @@
 
 ###
 
-<p align="left">```bash<br>git clone https://github.com/your-username/your-repo.git<br>cd your-repo<br>cp .env.example .env   # fill in your values<br>docker-compose up -d<br>mvn spring-boot:run<br>```</p>
+<p align="left">```bash<br>git clone https://github.com/Akhilreddy175/jobapplicationtracker.git<br>cd your-repo<br>cp .env.example .env   # fill in your values<br>docker-compose up -d<br>mvn spring-boot:run<br>```</p>
 
 ###
 
